@@ -57,7 +57,20 @@ public class ClipTest {
     @Test
     public void testSetEndBeforeStartKeepsPreviousValue()
     {
-        
+          System.out.println("Set Time");
+         Clip instance = new Clip();
+       String OriginalTitle = "Sub video"; //Create sub video clip
+       instance.setTitle(OriginalTitle);   // Set Ttile  
+       int OriginalStartTime = 10;
+       int originalEndtime = 50;
+       instance.setMax(100);//set master video to 100 seconds video
+       instance.setStart(OriginalStartTime); 
+       instance.setEnd(originalEndtime);
+       int EndTime = instance.getEnd(); //Get endtime of the video
+       instance.setStart(EndTime); //Set end time as start time to the sub clip
+       int CurrentStartTime = instance.getStart();//check time has changed
+       assertEquals(OriginalStartTime,CurrentStartTime);
+       System.out.println("Time has been set");
     
     }
 
