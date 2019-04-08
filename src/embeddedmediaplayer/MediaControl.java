@@ -347,7 +347,10 @@ public class MediaControl extends VBox {
         btnNudgeSelectedStartBack.setStyle("-fx-max-width:infinity");
         btnNudgeSelectedStartBack.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-              
+                 Clip p = table.getSelectionModel().getSelectedItem();
+                if (p==null) return;
+                mp.seek(getCurrentTime().subtract(duration.seconds(1)));
+                 doTableRefresh(table);
                 
             }
         });
