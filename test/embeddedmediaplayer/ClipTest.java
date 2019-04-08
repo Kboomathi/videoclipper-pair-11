@@ -151,6 +151,29 @@ public class ClipTest {
     @Test
     public void testSetStartToValidPositiveNumber() 
     {    
+       System.out.println("Set Start Time to Valid Numbers");
+       boolean PositiveFlag = false;
+       Clip newclip2 = new Clip();
+       String NewTitle = "ClipOne";
+       newclip2.setTitle(NewTitle);
+       int clip1StartTime = 10;
+       int clip1EndTime = 30;
+       newclip2.setStart(clip1StartTime);
+       newclip2.setEnd(clip1EndTime);
+       int PositiveNumber = 13;
+       newclip2.setStart(PositiveNumber);
+       int ModifiedStartTime = newclip2.getStart();
+       if (ModifiedStartTime>0)
+       {
+           PositiveFlag = true;
+       }
+       assertEquals(true,PositiveFlag);
+       System.out.println("Start time is positive number");
+       
+       
+       
+
+       
         
     }
     
