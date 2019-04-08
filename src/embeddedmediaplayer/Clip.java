@@ -124,6 +124,8 @@ public void loadCSVLine(String s)
  
 
     boolean NotEquals(Clip subClip2) {
-        
+        if (subClip2==null) return false;
+    if ((this.getStart()==subClip2.getStart()) && (this.getEnd()==subClip2.getEnd()) && (this.getTitle()==subClip2.getTitle())) return true;
+    return false;
     }
 }
